@@ -43,7 +43,7 @@ class Teacher implements TeacherInterface {
 }
 
 // createEmployee function
-function createEmployee(salary: number | string): Director | Teacher {
+export function createEmployee(salary: number | string): Director | Teacher {
   if (salary < 500) {
     return new Teacher();
   }
@@ -51,12 +51,12 @@ function createEmployee(salary: number | string): Director | Teacher {
 }
 
 // isDirector function (type predicate)
-function isDirector(employee: Director | Teacher): employee is Director {
+export function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
 
 // executeWork function
-function executeWork(employee: Director | Teacher): string {
+export function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
   } else {
