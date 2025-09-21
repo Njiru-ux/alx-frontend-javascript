@@ -64,6 +64,19 @@ export function executeWork(employee: Director | Teacher): string {
   }
 }
 
+// String literal type for Subjects
+type Subjects = 'Math' | 'History';
+
+// teachClass function
+export function teachClass(todayClass: Subjects): string {
+  if (todayClass === 'Math') {
+    return 'Teaching Math';
+  } else if (todayClass === 'History') {
+    return 'Teaching History';
+  }
+  return ''; // This should never happen due to the type
+}
+
 // Test the functions
 console.log(createEmployee(200));
 console.log(createEmployee(1000));
@@ -71,3 +84,7 @@ console.log(createEmployee('$500'));
 
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
+
+// Test teachClass function
+console.log(teachClass('Math'));    // Should output: Teaching Math
+console.log(teachClass('History')); // Should output: Teaching History
