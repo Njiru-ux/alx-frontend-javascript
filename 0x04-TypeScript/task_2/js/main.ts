@@ -42,7 +42,7 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// createEmployee function - SIMPLIFIED TO MATCH EXACT PATTERN
+// createEmployee function
 function createEmployee(salary: number | string): Director | Teacher {
   if (salary < 500) {
     return new Teacher();
@@ -50,12 +50,12 @@ function createEmployee(salary: number | string): Director | Teacher {
   return new Director();
 }
 
-// Function to check if employee is Director
+// isDirector function (type predicate)
 function isDirector(employee: Director | Teacher): employee is Director {
   return (employee as Director).workDirectorTasks !== undefined;
 }
 
-// Function to execute work based on employee type
+// executeWork function
 function executeWork(employee: Director | Teacher): string {
   if (isDirector(employee)) {
     return employee.workDirectorTasks();
@@ -65,9 +65,9 @@ function executeWork(employee: Director | Teacher): string {
 }
 
 // Test the functions
-console.log(createEmployee(200));    // Should output: Teacher
-console.log(createEmployee(1000));   // Should output: Director
-console.log(createEmployee('$500')); // Should output: Director
+console.log(createEmployee(200));
+console.log(createEmployee(1000));
+console.log(createEmployee('$500'));
 
-console.log(executeWork(createEmployee(200)));    // Should output: Getting to work
-console.log(executeWork(createEmployee(1000)));   // Should output: Getting to director tasks
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
