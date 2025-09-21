@@ -1,0 +1,16 @@
+{
+  "name": "task_2",
+  "version": "1.0.0",
+  "description": "TypeScript task 2",
+  "main": "js/main.ts",
+  "scripts": {
+    "build": "webpack",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.4.4",
+    "typescript": "^4.9.5",
+    "webpack": "^5.76.3",
+    "webpack-cli": "^5.0.1"
+  }
+}
