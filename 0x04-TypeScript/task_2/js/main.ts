@@ -67,8 +67,8 @@ export function executeWork(employee: Director | Teacher): string {
 // String literal type named Subjects
 type Subjects = 'Math' | 'History';
 
-// Function named teachClass
-export function teachClass(todayClass: Subjects): string {
+// Function named teachClass with exact pattern todayClass:Subjects
+export function teachClass(todayClass:Subjects): string {
   if (todayClass === 'Math') {
     return 'Teaching Math';
   }
