@@ -8,7 +8,7 @@ interface Teacher {
   [key: string]: any; // Allow any additional attributes
 }
 
-// Define the Director interface that extends Teacher
+// Define the Director interface that extends Teacher (SINGULAR - Director)
 interface Director extends Teacher {
   numberOfReports: number;
 }
@@ -23,7 +23,7 @@ function printTeacher(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
 }
 
-// Example usage
+// Example usage - MUST use Director (singular) not Directors
 const director1: Director = {
   firstName: 'John',
   lastName: 'Doe',
