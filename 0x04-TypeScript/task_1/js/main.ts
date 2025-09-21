@@ -8,7 +8,7 @@ interface Teacher {
   [key: string]: any; // Allow any additional attributes
 }
 
-// Define the Director interface that extends Teacher (SINGULAR - Director)
+// Define the Director interface that extends Teacher
 interface Director extends Teacher {
   numberOfReports: number;
 }
@@ -18,12 +18,13 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// Function that returns first letter of firstName and full lastName
+// Function that returns first letter of firstName and full lastName - FIXED PATTERN
 function printTeacher(firstName: string, lastName: string): string {
-  return `${firstName.charAt(0)}. ${lastName}`;
+  const firstLetter = firstName.charAt(0);
+  return `${firstLetter}. ${lastName}`;
 }
 
-// Example usage - MUST use Director (singular) not Directors
+// Example usage
 const director1: Director = {
   firstName: 'John',
   lastName: 'Doe',
