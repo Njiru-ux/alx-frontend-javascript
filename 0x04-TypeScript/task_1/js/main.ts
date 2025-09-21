@@ -18,10 +18,39 @@ interface printTeacherFunction {
   (firstName: string, lastName: string): string;
 }
 
-// Function that returns first letter of firstName and full lastName - FIXED PATTERN
+// Function that returns first letter of firstName and full lastName
 function printTeacher(firstName: string, lastName: string): string {
-  const firstLetter = firstName.charAt(0);
-  return `${firstLetter}. ${lastName}`;
+  return `${firstName.charAt(0)}. ${lastName}`;
+}
+
+// Interface for StudentClass constructor
+interface StudentConstructor {
+  new (firstName: string, lastName: string): StudentClassInterface;
+}
+
+// Interface for StudentClass methods
+interface StudentClassInterface {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+// Class named StudentClass
+class StudentClass implements StudentClassInterface {
+  private firstName: string;
+  private lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+  }
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+
+  displayName(): string {
+    return this.firstName;
+  }
 }
 
 // Example usage
@@ -37,3 +66,8 @@ console.log(director1);
 
 // Test the printTeacher function
 console.log(printTeacher("John", "Doe")); // Should output: J. Doe
+
+// Test StudentClass
+const student = new StudentClass("Alice", "Smith");
+console.log(student.displayName()); // Should output: Alice
+console.log(student.workOnHomework()); // Should output: Currently working
