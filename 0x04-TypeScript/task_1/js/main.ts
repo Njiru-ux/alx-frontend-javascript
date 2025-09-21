@@ -19,9 +19,9 @@ interface printTeacherFunction {
 }
 
 // Function that returns first letter of firstName and full lastName
-const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => {
+function printTeacher(firstName: string, lastName: string): string {
   return `${firstName.charAt(0)}. ${lastName}`;
-};
+}
 
 // Example usage
 const director1: Director = {
