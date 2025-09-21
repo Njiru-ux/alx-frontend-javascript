@@ -42,13 +42,12 @@ class Teacher implements TeacherInterface {
   }
 }
 
-// createEmployee function
+// createEmployee function - FIXED TO MATCH EXACT PATTERN
 function createEmployee(salary: number | string): Director | Teacher {
   if (typeof salary === "number" && salary < 500) {
     return new Teacher();
-  } else {
-    return new Director();
   }
+  return new Director();
 }
 
 // Function to check if employee is Director
