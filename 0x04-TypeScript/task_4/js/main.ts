@@ -9,24 +9,24 @@ namespace Subjects {
   export const java = new Java();
   export const react = new React();
 
-  export const creacher: Teacher = {
+  export const cTeacher: Teacher = {
     firstName: "John",
     lastName: "Doe",
     experienceTeachingC: 10
   };
 
   console.log("C++");
-  cpp.setTeacher(creacher);
+  cpp.setTeacher(cTeacher);
   console.log(cpp.getRequirements());
   console.log(cpp.getAvailableTeacher());
 
   console.log("Java");
-  java.setTeacher(creacher);
+  java.setTeacher(cTeacher);
   console.log(java.getRequirements());
   console.log(java.getAvailableTeacher());
 
   console.log("React");
-  react.setTeacher(creacher);
+  react.setTeacher(cTeacher);
   console.log(react.getRequirements());
   console.log(react.getAvailableTeacher());
 }
