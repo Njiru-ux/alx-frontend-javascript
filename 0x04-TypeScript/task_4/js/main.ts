@@ -5,33 +5,28 @@
 /// <reference path="subjects/Teacher.ts" />
 
 namespace Subjects {
-  // Export constants for each subject
   export const cpp = new Cpp();
   export const java = new Java();
   export const react = new React();
 
-  // Export teacher object with experienceTeachingC = 10
-  export const cTeacher: Teacher = {
+  export const creacher: Teacher = {
     firstName: "John",
     lastName: "Doe",
     experienceTeachingC: 10
   };
 
-  // For Cpp subject
   console.log("C++");
-  cpp.setTeacher(cTeacher);
+  cpp.setTeacher(creacher);
   console.log(cpp.getRequirements());
   console.log(cpp.getAvailableTeacher());
 
-  // For Java subject
   console.log("Java");
-  java.setTeacher(cTeacher);
+  java.setTeacher(creacher);
   console.log(java.getRequirements());
   console.log(java.getAvailableTeacher());
 
-  // For React subject
   console.log("React");
-  react.setTeacher(cTeacher);
+  react.setTeacher(creacher);
   console.log(react.getRequirements());
   console.log(react.getAvailableTeacher());
 }
