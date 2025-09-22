@@ -1,9 +1,5 @@
-// Import ROWID and ROWElement from interface.ts
-import { ROWID, ROWElement } from './interface';
+import { RowID, RowElement } from './interface';
 
-// Declare the crud functions with exact pattern
-declare function insertRow(row: ROWElement): number;
-declare function deleteRow(rowId: ROWID): void;
-declare function updateRow(rowId: ROWID, row: ROWElement): ROWID;
-
-export { insertRow, deleteRow, updateRow };
+export declare function insertRow(row: RowElement): number;
+export declare function deleteRow(rowId: RowID): void;
+export declare function updateRow(rowId: RowID, row: RowElement): RowID;

@@ -1,23 +1,15 @@
 /// <reference path="./crud.d.ts" />
 
-// Import types from interface.ts
-import { ROWID, ROWElement } from './interface';
-
-// Import everything from crud.js as CRUD
+import { RowID, RowElement } from './interface';
 import * as CRUD from './crud';
 
-// Create an object called row of type ROWElement
-const row: ROWElement = {
+const row: RowElement = {
   firstName: 'Guillaume',
   lastName: 'Salva'
 };
 
-// Create a variable newROWID (of type ROWID) initialized with insertRow
-const newROWID: ROWID = CRUD.insertRow(row);
+const newRowID: RowID = CRUD.insertRow(row);
+const updatedRow: RowElement = { firstName: 'Guillaume', lastName: 'Salva', age: 23 };
 
-// Create updatedRow with age field
-const updatedRow: ROWElement = { ...row, age: 23 };
-
-// Call updateRow and deleteRow
-CRUD.updateRow(newROWID, updatedRow);
-CRUD.deleteRow(newROWID);
+CRUD.updateRow(newRowID, updatedRow);
+CRUD.deleteRow(newRowID);
